@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE xml>
+<persistence>
+    <persistence-unit name="DenkiDS">
+        <jta-data-source>java:/DenkiDS</jta-data-source>
+    </persistence-unit>
+</persistence>
+
