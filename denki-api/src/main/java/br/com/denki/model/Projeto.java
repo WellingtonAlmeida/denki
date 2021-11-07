@@ -19,9 +19,11 @@ public class Projeto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
+    @Setter
     private Long id;
 
     @Getter
     @Setter
     private String descricao;
+
 }

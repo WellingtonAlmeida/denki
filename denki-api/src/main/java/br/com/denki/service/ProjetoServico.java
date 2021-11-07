@@ -26,4 +26,8 @@ public class ProjetoServico {
         return dao.buscarPorId(id);
     }
 
+    public void atualizar(Projeto projeto) {
+        dao.atualizar(projeto);
+    }
+
 }

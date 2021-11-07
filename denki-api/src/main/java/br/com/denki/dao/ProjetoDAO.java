@@ -29,4 +29,8 @@ public class ProjetoDAO {
         return query.getSingleResult();
     }
 
+    public void atualizar(Projeto projeto) {
+        em.merge(projeto);
+    }
+
 }
