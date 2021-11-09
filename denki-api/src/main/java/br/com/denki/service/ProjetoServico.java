@@ -14,8 +14,9 @@ public class ProjetoServico {
     @Inject
     ProjetoDAO dao;
 
-    public void inserir(Projeto projeto) {
+    public Projeto inserir(Projeto projeto) {
         dao.inserir(projeto);
+        return projeto;
     }
 
     public List<Projeto> buscar() {
