@@ -15,22 +15,21 @@ public class ProjetoDAO {
     @PersistenceContext
     private EntityManager em;
 
+    public void atualizar(Projeto projeto) {
+        em.merge(projeto);
+    }
+
+    public Projeto buscarPorId(Long id) {
+        return em.find(Projeto.class, id);
+    }
+
     public void inserir(Projeto projeto) {
         em.persist(projeto);
     }
 
     public List<Projeto> buscar() {
-        return em.createQuery("SELECT p FROM Projeto p", Projeto.class).getResultList();
-    }
-
-    public Projeto buscarPorId(Long id) {
-        TypedQuery<Projeto> query = em.createQuery("SELECT p FROM Projeto p WHERE p.id = :id", Projeto.class);
-        query.setParameter("id", id);
-        return query.getSingleResult();
-    }
-
-    public void atualizar(Projeto projeto) {
-        em.merge(projeto);
+        TypedQuery<Projeto> query = em.createQuery("SELECT p FROM Projeto p", Projeto.class);
+        return query.getResultList();
     }
 
 }

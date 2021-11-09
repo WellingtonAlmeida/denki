@@ -1,7 +1,5 @@
 package br.com.denki.controller;
 
-import java.net.URI;
-
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -36,7 +34,9 @@ public class ProjetoController {
 
     @PATCH
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response atualizaProjeto(Projeto projeto) {
+    @Path("{id}")
+    public Response atualizaProjeto(@PathParam("id") Long id, Projeto projeto) {
+        projeto.setId(id);
         projetoServico.atualizar(projeto);
         return Response.ok().build();
     }
