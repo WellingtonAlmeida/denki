@@ -19,7 +19,7 @@ import javax.ws.rs.core.UriInfo;
 import br.com.denki.model.Projeto;
 import br.com.denki.service.ProjetoServico;
 
-@Path("projeto")
+@Path("projetos")
 public class ProjetoController {
 
     @Inject
