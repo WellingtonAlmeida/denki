@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Projeto } from './projeto';
@@ -9,9 +9,14 @@ import { Projeto } from './projeto';
 export class ProjetoService {
 
   private url = 'denki-api/projetos';
+  private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  listarProcessos(): Observable<Projeto[]> {
+  listarProjetos(): Observable<Projeto[]> {
     return this.http.get<Projeto[]>(this.url);
+  }
+
+  gravar(projeto: Projeto): Observable<Object> {
+    return this.http.post(this.url, projeto, { headers: this.headers });
   }
 
   constructor(private http: HttpClient) { }

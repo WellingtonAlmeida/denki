@@ -1,0 +1,8 @@
+<form (ngSubmit)="gravar()">
+    <h2>Novo projeto</h2>
+    <div>
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" [(ngModel)]="descricao" name="descricao">
+    </div>
+    <button type="submit">Gravar</button>
+</form>

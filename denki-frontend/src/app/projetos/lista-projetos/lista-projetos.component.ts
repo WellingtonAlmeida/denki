@@ -12,7 +12,7 @@ export class ListaProjetosComponent implements OnInit {
   projetos: Projeto[] = [];
 
   constructor(private projetoService: ProjetoService) {
-    this.projetoService.listarProcessos().subscribe(projetos => this.projetos = projetos);
+    this.projetoService.listarProjetos().subscribe(projetos => this.projetos = projetos);
   }
 
   ngOnInit(): void { }
