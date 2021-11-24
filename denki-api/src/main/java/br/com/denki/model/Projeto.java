@@ -26,4 +26,7 @@ public class Projeto implements Serializable {
     @Setter
     private String descricao;
 
+    @Getter
+    @Setter
+    private Boolean ativo = Boolean.TRUE;
 }

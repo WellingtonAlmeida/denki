@@ -2,6 +2,7 @@ package br.com.denki.controller;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.PATCH;
 import javax.ws.rs.POST;
@@ -52,6 +53,13 @@ public class ProjetoController {
     @Path("{id}")
     public Response buscarPorId(@PathParam("id") Long id) {
         return Response.ok(projetoServico.buscarPorId(id)).build();
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response excluir(@PathParam("id") Long id) {
+        projetoServico.excluir(id);
+        return Response.ok().build();
     }
 
 }

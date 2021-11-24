@@ -31,4 +31,8 @@ public class ProjetoServico {
         dao.atualizar(projeto);
     }
 
+    public void excluir(Long id) {
+        dao.excluir(id);
+    }
+
 }
