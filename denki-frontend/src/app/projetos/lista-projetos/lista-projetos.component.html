@@ -1,4 +1,7 @@
 <h2>Lista de projetos</h2>
 <ul>
-    <li *ngFor="let projeto of projetos">{{projeto.descricao}}</li>
+    <li *ngFor="let projeto of projetos" id={{projeto.id}}>
+        {{projeto.descricao}}
+        <button (click)="excluir(projeto)">Excluir</button>
+    </li>
 </ul>
