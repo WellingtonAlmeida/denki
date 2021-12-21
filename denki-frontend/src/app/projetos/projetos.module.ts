@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ListaProjetosComponent } from './lista-projetos/lista-projetos.component';
 import { NovoProjetoComponent } from './novo-projeto/novo-projeto.component';
 import { ProjetoService } from './projeto.service';
+import { ProjetosRoutingModule } from './projetos-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ProjetoService } from './projeto.service';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ProjetosRoutingModule
   ],
   providers: [
     ProjetoService
