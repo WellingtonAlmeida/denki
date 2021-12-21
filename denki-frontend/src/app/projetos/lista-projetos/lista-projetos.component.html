@@ -3,5 +3,6 @@
     <li *ngFor="let projeto of projetos" id={{projeto.id}}>
         {{projeto.descricao}}
         <button (click)="excluir(projeto)">Excluir</button>
+        <button (click)="abrir(projeto)">Abrir</button>
     </li>
 </ul>

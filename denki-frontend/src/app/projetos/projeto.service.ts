@@ -23,5 +23,9 @@ export class ProjetoService {
     return this.http.delete(`${this.url}/${projeto.id}`)
   }
 
+  buscarPorId(id: number): Observable<Object> {
+    return this.http.get(`${this.url}/${id}`)
+  }
+
   constructor(private http: HttpClient) { }
 }

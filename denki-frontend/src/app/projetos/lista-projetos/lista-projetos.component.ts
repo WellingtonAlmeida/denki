@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 import { Projeto } from '../projeto'
 import { ProjetoService } from '../projeto.service'
 
@@ -11,7 +12,8 @@ export class ListaProjetosComponent implements OnInit {
 
   projetos: Projeto[] = []
 
-  constructor(private projetoService: ProjetoService) {
+  constructor(private projetoService: ProjetoService,
+    private router: Router) {
     this.projetoService.listarProjetos().subscribe(projetos => this.projetos = projetos)
   }
 
@@ -23,6 +25,10 @@ export class ListaProjetosComponent implements OnInit {
         node?.remove()
       })
     }
+  }
+
+  abrir(projeto: Projeto): void {
+    this.router.navigate(['/projetos/projeto', projeto.id])
   }
 
   ngOnInit(): void { }
